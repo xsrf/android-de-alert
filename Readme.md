@@ -1,7 +1,7 @@
 DE-Alert for Android 8.1 Oreo
 =============================
 
-<img src="Screenshot.png" width="200" style="float: right;" alt="Screenshot" />
+<img src="Screenshot.png" width="200" align="right" alt="Screenshot" />
 
 This is just a Demo implementation of a Resource Overlay for `com.android.cellbroadcastreceiver` as described on [CellBroadcast](https://source.android.com/devices/architecture/modular-system/cellbroadcast#customizing) and [Runtime Resource Overlays (RROs)](https://source.android.com/devices/architecture/rros#overlaying-resources).
 
@@ -13,11 +13,11 @@ This Android App (apk) has no code. It just has some resources (strings and conf
 
 Files
 -----
-- [app\src\main\AndroidManifest.xml](app\src\main\AndroidManifest.xml)  
+- [app/src/main/AndroidManifest.xml](app/src/main/AndroidManifest.xml)  
   Contains the main manifest file which tells Android that this is an overlay for the system app `com.android.cellbroadcastreceiver`.
-- [app\src\main\res\values-mcc262\config.xml](app\src\main\res\values-mcc262\config.xml)  
+- [app/src/main/res/values-mcc262/config.xml](app/src/main/res/values-mcc262/config.xml)  
   Contains additional Cell Broadcast Channels and configurations for german mobile networks (Mobile Country Code 262). This is not really needed as Android subscribes to DE-Alert/CMAS channels by default, but you can specify additional channels here, like 221 for Telefónica o2.
-- [app\src\main\res\values-mcc262-de\strings.xml](app\src\main\res\values-mcc262-de\strings.xml)  
+- [app/src/main/res/values-mcc262-de/strings.xml](app/src/main/res/values-mcc262-de/strings.xml)  
   Contains the german translation / labels for the UI.
 
 
