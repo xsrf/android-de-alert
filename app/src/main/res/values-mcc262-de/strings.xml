@@ -2,6 +2,8 @@
 <!-- 
     String reference:
     https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/res/values/strings.xml
+    German:
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/res/values-de/strings.xml
 -->
 <resources>
 
@@ -23,7 +25,7 @@
     <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
     <string name="cmas_severe_alert">DE-Alert Level 3</string>
     <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
-    <string name="cmas_amber_alert">Child abduction (Amber alert)</string>
+    <string name="cmas_amber_alert">Kindesentführung (Amber Alert)</string>
     <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
     <string name="cmas_required_monthly_test">DE-Alert monatlicher Test</string>
     <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
