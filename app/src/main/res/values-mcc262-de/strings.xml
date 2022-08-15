@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    String reference:
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/res/values/strings.xml
+-->
+<resources>
+
+    <!-- Settings menu -->
+    <string name="app_label" msgid="7559008249836700599">"Cell Broadcast"</string>
+    <string name="sms_cb_settings" msgid="3795852619005211509">"DE-Alert 🤓"</string>
+    <string name="menu_preferences" msgid="3596514894131599202">"Einstellungen"</string>
+    <string name="enable_cmas_extreme_threat_alerts_title">DE-Alert Level 2</string>
+    <string name="enable_cmas_severe_threat_alerts_title">DE-Alert Level 3</string>
+    <!-- Amber alerts are not part of EU-Alert -->
+    <string name="enable_cmas_amber_alerts_title">Amber Alert</string>
+    <string name="enable_cmas_amber_alerts_summary">Hinweise zu Kindesentführung (CMAS)</string>
+
+    <!-- Message Dialog -->
+    <!-- CMAS dialog title for presidential level alert. [CHAR LIMIT=50] -->
+    <string name="cmas_presidential_level_alert">DE-Alert Level 1</string>
+    <!-- CMAS dialog title for extreme alert. [CHAR LIMIT=50] -->
+    <string name="cmas_extreme_alert">DE-Alert Level 2</string>
+    <!-- CMAS dialog title for severe alert. [CHAR LIMIT=50] -->
+    <string name="cmas_severe_alert">DE-Alert Level 3</string>
+    <!-- CMAS dialog title for child abduction emergency (Amber Alert). [CHAR LIMIT=50] -->
+    <string name="cmas_amber_alert">Child abduction (Amber alert)</string>
+    <!-- CMAS dialog title for required monthly test. [CHAR LIMIT=50] -->
+    <string name="cmas_required_monthly_test">DE-Alert monatlicher Test</string>
+    <!-- CMAS dialog title for CMAS Exercise. [CHAR LIMIT=50] -->
+    <string name="cmas_exercise_alert">DE-Alert Probealarm</string>
+    <!-- CMAS dialog title for operator defined use. [CHAR LIMIT=50] -->
+    <string name="cmas_operator_defined_alert">DE-Alert Mobilfunkanbiter Test</string>
+    <!-- Dialog title for all other message identifiers in the PWS range. [CHAR LIMIT=50] -->
+    <string name="pws_other_message_identifiers">DE-Alert Warnmeldung</string>
+    <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->
+    <string name="cb_other_message_identifiers">Broadcast Messages</string>
+    
+</resources>

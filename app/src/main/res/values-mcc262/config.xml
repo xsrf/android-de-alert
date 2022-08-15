@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    See this for example documentation:
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastChannelManager.java;l=27
+
+
+    Possible Types for additional_cbs_channels_strings "type=<type>":
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastChannelManager.java;l=27
+    shows "earthquake","tsunami","other"
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/res/values-mcc404/config.xml
+    shows "area"
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastChannelManager.java;l=77
+    suggests these are possible:
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastAlertService.java;drc=f2aa182a4bc98d7c5e7ea1b5ea3255de5c448423;l=144
+    Type (not case sensitive):
+        public enum AlertType {
+            DEFAULT,
+            ETWS_DEFAULT,
+            ETWS_EARTHQUAKE,
+            ETWS_TSUNAMI,
+            TEST,
+            AREA,
+            INFO,
+            OTHER
+        }    
+    However, "DEFAULT" throws an exception:
+    E CellBroadcastChannelManager: Failed to parse "0x0DD-0x0DF:type=DEFAULT, emergency=true". e=java.lang.IllegalArgumentException: No enum constant com.android.cellbroadcastreceiver.CellBroadcastAlertService.AlertType.DEFAULT
+    and "tsunami" is obviously not the same as "ETWS_TSUNAMI".
+    ¯\_(ツ)_/¯
+
+    Some references from Android 8.1:
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/res/values-mcc466/config.xml
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/res/values-mcc404/config.xml
+    Settings:
+    https://cs.android.com/android/platform/superproject/+/android-8.1.0_r81:packages/apps/CellBroadcastReceiver/res/values-mcc440/config.xml
+
+    Some references from Android 11 (overlayable):
+    https://cs.android.com/android/platform/superproject/+/android-11.0.0_r9:packages/apps/CellBroadcastReceiver/res/values/overlayable.xml
+    Other:
+    https://cs.android.com/android/platform/superproject/+/android-11.0.0_r9:packages/apps/CellBroadcastReceiver/res/values-mcc226/config.xml
+    https://cs.android.com/android/platform/superproject/+/android-11.0.0_r9:packages/apps/CellBroadcastReceiver/res/values-mcc302/strings.xml
+
+    Custom sounds:
+    https://cs.android.com/android/platform/superproject/+/android-11.0.0_r9:packages/apps/CellBroadcastReceiver/res/raw-mcc302/
+    
+-->
+
+<resources>
+    
+    <!-- Tried these two to show "Presidential Alert / EU-Alert Level 1" but it doesn't show -->
+    <bool name="show_presidential_alerts_settings" translatable="false">true</bool>
+    <bool name="enable_cmas_presidential_alerts" translatable="false">true</bool>
+
+    <!-- Tried these two to show additional toggles, but doesn't work either -->
+    <bool name="enable_state_local_test_alerts" translatable="false">true</bool>
+    <bool name="enable_operator_defined_alerts" translatable="false">true</bool>
+    
+    <!-- Add additional channels to listen to. Works, verify via `adb logcat`, see Readme -->
+    <string-array name="additional_cbs_channels_strings" translatable="false">
+        <!-- Channel 917-928 GSMA -->
+        <item>0x0395-0x03A0:type=other, emergency=false</item>
+        <!-- Channel 60 -->
+        <item>0x03C:type=area, emergency=false</item>
+        <!-- Channel 221-223 o2; only interested in 221 but I selected a range bc only ranges show up in logcat -->
+        <item>0x0DD-0x0DF:type=DEFAULT, emergency=true</item>
+        <!-- Subscribe to ALL channels (with default type) -->
+        <item>0x0000-0xFFFE</item>
+    </string-array>
+
+    <!-- Tried this to e.g. map 221 to severe alert... no clue if it works -->
+    <string-array name="cmas_alerts_severe_range_strings" translatable="false">
+        <!-- map 221 as severe alert ?? no idea if this works -->
+        <item>0x0DD:rat=gsm, emergency=true</item>
+    </string-array>
+</resources>
+
