@@ -66,3 +66,7 @@ Use `adb logcat` to confirm that the phone actually subscribed to the requested 
 D IccSmsInterfaceManager: [IccSmsInterfaceManager] Added GSM cell broadcast subscription for MID range 4370 to 4370 from client com.android.cellbroadcastreceiver
 D IccSmsInterfaceManager: [IccSmsInterfaceManager] Added GSM cell broadcast subscription for MID range 919 to 928 from client com.android.cellbroadcastreceiver
 ```
+
+Misc
+----
+Use [Activity Launcher](https://play.google.com/store/apps/details?id=de.szalkowski.activitylauncher) to create a shortcut to `com.android.cellbroadcastreceiver`.
