@@ -6,9 +6,9 @@
 <resources>
 
     <!-- Settings menu -->
-    <string name="app_label" msgid="7559008249836700599">"Cell Broadcast"</string>
-    <string name="sms_cb_settings" msgid="3795852619005211509">"DE-Alert 🤓"</string>
-    <string name="menu_preferences" msgid="3596514894131599202">"Einstellungen"</string>
+    <string name="app_label">Cell Broadcast</string>
+    <string name="sms_cb_settings">DE-Alert 🤓</string>
+    <string name="menu_preferences">Einstellungen</string>
     <string name="enable_cmas_extreme_threat_alerts_title">DE-Alert Level 2</string>
     <string name="enable_cmas_severe_threat_alerts_title">DE-Alert Level 3</string>
     <!-- Amber alerts are not part of EU-Alert -->
