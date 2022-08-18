@@ -43,7 +43,7 @@
 
     Custom sounds:
     https://cs.android.com/android/platform/superproject/+/android-11.0.0_r9:packages/apps/CellBroadcastReceiver/res/raw-mcc302/
-    
+
 -->
 
 <resources>
@@ -58,17 +58,42 @@
     
     <!-- Add additional channels to listen to. Works, verify via `adb logcat`, see Readme -->
     <string-array name="additional_cbs_channels_strings" translatable="false">
+        <!-- Additional EU-Alert Channels not already subscribed to with CMAS -->
+        <!-- Channel 4396-4397 GSMA - EU-Alert Level 4 -->
+        <item>0x112C-0x112D</item>
+        <!-- Channel 4398-4399 GSMA - EU-Test -->
+        <item>0x112E-0x112F</item>
+        <!-- Channel 4382,4395 GSMA - EU-Reserved (Test) -->
+        <item>0x111E</item>
+        <item>0x112B</item>
+        <!-- Channel 4381,4394 GSMA - EU-Exercise (Test) -->
+        <item>0x111D</item>
+        <item>0x112A</item>
+        <!-- Channel 4380,4393 GSMA - EU-Monthly (Test) -->
+        <item>0x111C</item>
+        <item>0x1129</item>
+
+        <!-- Additional GSMA Channels sometimes used -->
         <!-- Channel 917-928 GSMA -->
         <item>0x0395-0x03A0:type=other, emergency=false</item>
+
+        <!-- Other maybe interesting channels -->
+        <!-- Channel 50 -->
+        <item>0x032:type=area, emergency=false</item>
         <!-- Channel 60 -->
         <item>0x03C:type=area, emergency=false</item>
-        <!-- Channel 221-223 o2; only interested in 221 but I selected a range bc only ranges show up in logcat -->
-        <item>0x0DD-0x0DF:type=DEFAULT, emergency=true</item>
+        <!-- Channel 221 on o2 network sending GK coordinates of BTS -->
+        <item>0x0DD:type=other, emergency=false</item>
+
         <!-- Subscribe to ALL channels (with default type) -->
         <item>0x0000-0xFFFE</item>
     </string-array>
 
-    <!-- Tried this to e.g. map 221 to severe alert... no clue if it works -->
+    <!-- 
+        Tried this to e.g. map 221 to severe alert...
+        This actually requires Android 9+, see:
+        https://cs.android.com/android/platform/superproject/+/android-9.0.0_r1:packages/apps/CellBroadcastReceiver/src/com/android/cellbroadcastreceiver/CellBroadcastAlertService.java;l=455
+    -->
     <string-array name="cmas_alerts_severe_range_strings" translatable="false">
         <!-- map 221 as severe alert ?? no idea if this works -->
         <item>0x0DD:rat=gsm, emergency=true</item>
