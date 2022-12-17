@@ -11,11 +11,20 @@
     <string name="app_label">Cell Broadcast</string>
     <string name="sms_cb_settings">DE-Alert 🤓</string>
     <string name="menu_preferences">Einstellungen</string>
+    <string name="enable_emergency_alerts_summary">
+        Aktiviert weitere Notfallmeldungen sowie EU-Alert Level 4 (4396/4397) und EU-Alert Test (4398/4399)
+        \n\nEU-Alert Level 1 (4370/4383) ist auch bei Deaktivierung aktiv
+    </string>
     <string name="enable_cmas_extreme_threat_alerts_title">DE-Alert Level 2</string>
+    <string name="enable_cmas_extreme_threat_alerts_summary">Extreme Gefahren für Leben und Eigentum (4372/4385)</string>
     <string name="enable_cmas_severe_threat_alerts_title">DE-Alert Level 3</string>
+    <string name="enable_cmas_severe_threat_alerts_summary">Erhebliche Gefahren für Leben und Eigentum (4378/4391)</string>
     <!-- Amber alerts are not part of EU-Alert -->
     <string name="enable_cmas_amber_alerts_title">Amber Alert</string>
     <string name="enable_cmas_amber_alerts_summary">Hinweise zu Kindesentführung (CMAS)</string>
+    <!-- Test -->
+    <string name="enable_cmas_test_alerts_title">DE-Alert Testnachrichten</string>
+    <string name="enable_cmas_test_alerts_summary">Testnachrichten für EU-Alert (4380-4382/4393-4395)</string>
 
     <!-- Message Dialog -->
     <!-- CMAS dialog title for presidential level alert. [CHAR LIMIT=50] -->
@@ -36,5 +45,7 @@
     <string name="pws_other_message_identifiers">DE-Alert Warnmeldung</string>
     <!-- Dialog title for all non-emergency cell broadcasts. [CHAR LIMIT=50] -->
     <string name="cb_other_message_identifiers">Broadcast Messages</string>
+
+    <string name="show_cmas_opt_out_summary">Nach Einblenden der ersten EU-Alert Benachrichtigung (außer Warnungen des Präsidenten) Dialogfeld zum Deaktivieren anzeigen</string>
     
 </resources>

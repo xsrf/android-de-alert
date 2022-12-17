@@ -44,6 +44,41 @@
     Custom sounds:
     https://cs.android.com/android/platform/superproject/+/android-11.0.0_r9:packages/apps/CellBroadcastReceiver/res/raw-mcc302/
 
+
+    Android 8.1 default MIDs (via adb logcat | grep "Added GSM cell broadcast" the toggling the toggles):
+        All toggles disabled (CMAS presidential alert only):
+            Added GSM cell broadcast subscription for MID range 4370 to 4370
+            Added GSM cell broadcast subscription for MID range 4383 to 4383
+        Main toggle enabled, all others disabled:
+            Added GSM cell broadcast subscription for MID range 4352 to 4354
+            Added GSM cell broadcast subscription for MID range 4356 to 4356
+            Added GSM cell broadcast subscription for MID range 4370 to 4370
+            Added GSM cell broadcast subscription for MID range 4383 to 4383
+        All enabled except CMAS/ETWS Test:
+            Added GSM cell broadcast subscription for MID range 4352 to 4354
+            Added GSM cell broadcast subscription for MID range 4356 to 4356
+            Added GSM cell broadcast subscription for MID range 4370 to 4370
+            Added GSM cell broadcast subscription for MID range 4371 to 4372
+            Added GSM cell broadcast subscription for MID range 4373 to 4378
+            Added GSM cell broadcast subscription for MID range 4379 to 4379
+            Added GSM cell broadcast subscription for MID range 4383 to 4383
+            Added GSM cell broadcast subscription for MID range 4384 to 4385
+            Added GSM cell broadcast subscription for MID range 4386 to 4391
+            Added GSM cell broadcast subscription for MID range 4392 to 4392
+        All enabled including Test:
+            Added GSM cell broadcast subscription for MID range 4352 to 4354
+            Added GSM cell broadcast subscription for MID range 4356 to 4356
+            Added GSM cell broadcast subscription for MID range 4355 to 4355
+            Added GSM cell broadcast subscription for MID range 4370 to 4370
+            Added GSM cell broadcast subscription for MID range 4371 to 4372
+            Added GSM cell broadcast subscription for MID range 4373 to 4378
+            Added GSM cell broadcast subscription for MID range 4379 to 4379
+            Added GSM cell broadcast subscription for MID range 4380 to 4382
+            Added GSM cell broadcast subscription for MID range 4383 to 4383
+            Added GSM cell broadcast subscription for MID range 4384 to 4385
+            Added GSM cell broadcast subscription for MID range 4386 to 4391
+            Added GSM cell broadcast subscription for MID range 4392 to 4392
+            Added GSM cell broadcast subscription for MID range 4393 to 4395
 -->
 
 <resources>
@@ -60,33 +95,43 @@
     <string-array name="additional_cbs_channels_strings" translatable="false">
         <!-- Additional EU-Alert Channels not already subscribed to with CMAS -->
         <!-- Channel 4396-4397 GSMA - EU-Alert Level 4 -->
-        <item>0x112C-0x112D</item>
+        <!-- <item>0x112C-0x112D</item> -->
         <!-- Channel 4398-4399 GSMA - EU-Test -->
-        <item>0x112E-0x112F</item>
+        <!-- <item>0x112E-0x112F</item> -->
         <!-- Channel 4382,4395 GSMA - EU-Reserved (Test) -->
-        <item>0x111E</item>
-        <item>0x112B</item>
+        <!-- <item>0x111E</item> -->
+        <!-- <item>0x112B</item> -->
         <!-- Channel 4381,4394 GSMA - EU-Exercise (Test) -->
-        <item>0x111D</item>
-        <item>0x112A</item>
+        <!-- <item>0x111D</item> -->
+        <!-- <item>0x112A</item> -->
         <!-- Channel 4380,4393 GSMA - EU-Monthly (Test) -->
-        <item>0x111C</item>
-        <item>0x1129</item>
+        <!-- <item>0x111C</item> -->
+        <!-- <item>0x1129</item> -->
 
         <!-- Additional GSMA Channels sometimes used -->
         <!-- Channel 917-928 GSMA -->
-        <item>0x0395-0x03A0:type=other, emergency=false</item>
+        <!-- <item>0x0395-0x03A0:type=other, emergency=false</item> -->
 
         <!-- Other maybe interesting channels -->
         <!-- Channel 50 -->
-        <item>0x032:type=area, emergency=false</item>
+        <!-- <item>0x032:type=area, emergency=false</item> -->
         <!-- Channel 60 -->
-        <item>0x03C:type=area, emergency=false</item>
+        <!-- <item>0x03C:type=area, emergency=false</item> -->
         <!-- Channel 221 on o2 network sending GK coordinates of BTS -->
-        <item>0x0DD:type=other, emergency=false</item>
+        <!-- <item>0x0DD:type=other, emergency=false</item> -->
 
         <!-- Subscribe to ALL channels (with default type) -->
-        <item>0x0000-0xFFFE</item>
+        <!-- <item>0x0000-0xFFFE</item> -->
+        <!--
+            This might actually have caused issues... I did not receive a nation wide test on 4370/4383
+            On another test broadcast on 4380/4393 I only received 4393.
+        -->
+
+        <!-- Subscribe to all channels (with default type) that are not reachable via UI -->
+        <!-- <item>1-4351</item> -->
+        <item>4357-4369</item>
+        <item>4396-4399</item> <!-- EU-Alert Level 4 / EU-Alert Test -->
+        <!-- <item>5000-65534</item> -->
     </string-array>
 
     <!-- 
